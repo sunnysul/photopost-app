@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="post-box">
+
+    <!-- <img src="http://localhost:9595/images/1739984551099_replicate-prediction-38c3ynzzndrj20cmy09s21mwyw.webp" alt=""> -->
+
+    @for (item of allData; track $index) {
+    <div class="card">
+        <!-- <img [src]="imageUrls[item.image]" alt=""> not work -->
+        <!-- <img src="{{imageUrls[item.image]}}" alt=""> not work -->
+        <img src="http://localhost:9595/images/{{item.image}}" alt="">
+
+
+
+        <div class="caption">{{item.caption}}</div>
+        <div class="author">Posted By: {{item.user.name}}</div>
+    </div>
+    }
+</div>
