@@ -27,7 +27,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 
-## Angular CLI Commands List
+## Angular Used CLI Commands
 
 <!-- ng generate environments -->
 1. ng generate environments
+2. ng g g ./Services/authGuard

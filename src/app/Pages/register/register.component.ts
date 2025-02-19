@@ -47,6 +47,11 @@ export class RegisterComponent {
             "success": true
             }
         */
+
+        if (Res.success) {
+          alert(Res.message);
+          this.authServices.logout();
+        }
       }
     });
 

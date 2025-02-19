@@ -2,6 +2,7 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthServicesService } from '../../Services/auth-services.service';
+import { NavigationService } from '../../Services/navigation.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { AuthServicesService } from '../../Services/auth-services.service';
 export class LoginComponent {
   loginForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder, private authServices: AuthServicesService) {
+  constructor(private fb: FormBuilder, private authServices: AuthServicesService, private nav: NavigationService) {
 
     this.loginForm = this.fb.group({
 
@@ -41,6 +42,12 @@ export class LoginComponent {
     "success": true
 }
         */
+        if (Res.success) {
+          alert("Login Success");
+          this.authServices.setToken(Res.message);
+          this.nav.goToDashboard();
+        }
+
       }
     });
 

@@ -1,0 +1,25 @@
+<div class="navbar">
+    <div class="navbar__logo">
+        <a href="/">Logo</a>
+    </div>
+    <div class="navbar__menu">
+        <ul>
+            <!-- <li><a href="/login">Login</a></li> -->
+            <!-- <li><a href="/register">Register</a></li> -->
+            @if (isAuthenticated) {
+            <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+
+            }
+            @else {
+            <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
+            <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+
+            }
+
+
+        </ul>
+    </div>
+
+</div>
