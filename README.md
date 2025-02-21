@@ -32,3 +32,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <!-- ng generate environments -->
 1. ng generate environments
 2. ng g g ./Services/authGuard
+3. ng generate interceptor ./Intercepter/authinterceptor

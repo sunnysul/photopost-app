@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PhotopostService } from '../../Services/photopost.service';
 import { environment } from '../../../environments/environment';
 import { CommonModule } from '@angular/common';
+import { AuthServicesService } from '../../Services/auth-services.service';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomeComponent {
   allData: any = [];
   imageUrls: string = environment.API_URL + '/images/';
 
-  constructor(private photopostService: PhotopostService) {
+  constructor(private photopostService: PhotopostService, private authservices: AuthServicesService) {
+    authservices.isAuth.emit(true);
     this.getAllData();
   }
 
