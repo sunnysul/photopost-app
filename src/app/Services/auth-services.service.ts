@@ -59,4 +59,8 @@ export class AuthServicesService {
   // isNotAuthenticated(): EventEmitter<boolean> {
   //   return 
   // }
+
+  isAuthenticatUpdate() {
+    this.isAuth.emit(!!this.getToken());
+  }
 }

@@ -17,7 +17,8 @@ export class HomeComponent {
   imageUrls: string = environment.API_URL + '/images/';
 
   constructor(private photopostService: PhotopostService, private authservices: AuthServicesService) {
-    authservices.isAuth.emit(true);
+    // authservices.isAuth.emit(true);
+    authservices.isAuthenticatUpdate();
     this.getAllData();
   }
 

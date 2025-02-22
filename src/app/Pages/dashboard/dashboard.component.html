@@ -1,7 +1,45 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <div class="menu">
+        <ul>
+            <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+        </ul>
 
-<ul>
-    <li>
-       <button (click)="logout()">LogOut</button>
-    </li>
-</ul>
+    </div>
+
+    <div class="main">
+
+        <div class="addpost">
+            <form (ngSubmit)="submitPost()">
+                <img *ngIf="image" [src]="image" width="100" [height]="48" class="preview-image" alt="Preview image">
+                <input type="file" name="image" accept="image/*" (change)="onFileChange($event)">
+                <input type="text" name="caption" placeholder="Caption" [(ngModel)]="caption">
+                <button type="submit">Post</button>
+            </form>
+
+        </div>
+        <div class="listofallpost">
+
+            <div class="post-box">
+
+                <div class="card" *ngFor="let item of allData; let i = index">
+                    <div class="image-container">
+                        <img [src]="'http://localhost:9595/images/' + item.image" [style.width.px]="200"
+                            [style.height.px]="calculateImageHeight(200)" alt="Post image" loading="lazy">
+                    </div>
+                    <div class="caption">{{item.caption}}</div>
+                    <div class="author">Posted By: {{item.user.name}}</div>
+                    <div class="actionGroup">
+                        <button (click)="deletePost(item.postid)">Delete</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

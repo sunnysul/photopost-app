@@ -18,5 +18,21 @@ export class PhotopostService {
     return this.http.get(`${this.API_URL}/api/photopost/all`);
   }
 
+  // Get All Posts By /user
+  getAllPostsByUser() {
+    return this.http.get(`${this.API_URL}/api/photopost/user`);
+  }
+
+  //http://localhost:9595/api/photopost
+  // Create Post
+  createPost(data: any) {
+    return this.http.post(`${this.API_URL}/api/photopost`, data);
+  }
+
+  //http://localhost:9595/api/photopost/delete/{postid}
+  //delete post
+  deletePost(id: any) {
+    return this.http.delete(`${this.API_URL}/api/photopost/delete/${id}`);
+  }
 
 }

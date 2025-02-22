@@ -1,0 +1,74 @@
+.dashboard {
+    display: grid;
+    grid-template-areas:
+        "menu main";
+
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100vh;
+
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #333;
+    color: white;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f4f4f4;
+    color: #333;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addpost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.addpost>form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addpost>form>input {
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.addpost>form>button {
+    padding: 5px;
+    border: 1px solid #333;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.preview-image {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
